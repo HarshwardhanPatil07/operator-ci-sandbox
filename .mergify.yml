@@ -1,9 +1,4 @@
-pull_request_rules:
-  - name: backport to release branches
+commands_restrictions:
+  backport:
     conditions:
       - base=main
-      - label~=^backport/
-    actions:
-      backport:
-        branches:
-          - "{{ label.removeprefix('backport/') }}"

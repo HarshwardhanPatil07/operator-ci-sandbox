@@ -9,11 +9,15 @@ when the appropriate label is applied.
 
 ### How to backport a PR
 
-1. Create a PR targeting `main`.
-2. Add the label `backport/<release-branch>` (e.g., `backport/release-v1`).
-3. Merge the PR into `main`.
-4. Mergify automatically creates a new PR cherry-picking the changes onto the
+1. Create a PR targeting `main` and merge it.
+2. Comment on the merged PR:
+   ```
+   @mergifyio backport release-v1
+   ```
+3. Mergify automatically creates a new PR cherry-picking the changes onto the
    target release branch.
+
+This works with any existing release branch, no configuration changes needed.
 
 ### Available release branches
 
